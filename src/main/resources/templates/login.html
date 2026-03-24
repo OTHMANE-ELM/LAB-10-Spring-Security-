@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - SecureApp</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="glass-card">
+    <h2>Authentification</h2>
+    <p style="text-align: center">Veuillez entrer vos identifiants</p>
+
+    <div th:if="${param.error}" class="error-msg">
+        Identifiants incorrects, veuillez réessayer.
+    </div>
+
+    <div th:if="${param.logout}" class="success-msg">
+        Vous êtes déconnecté avec succès.
+    </div>
+
+    <form th:action="@{/authenticate}" method="post">
+        <div class="input-group">
+            <label for="username">Nom d’utilisateur</label>
+            <input type="text" id="username" name="username" placeholder="admin ou user" required autofocus>
+        </div>
+
+        <div class="input-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit">Se connecter</button>
+    </form>
+</div>
+</body>
+</html>

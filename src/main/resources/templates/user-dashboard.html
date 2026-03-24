@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - SecureApp</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="glass-card">
+    <div style="text-align: center">
+        <span class="badge badge-user">Standard Access</span>
+    </div>
+    <h2>Espace Utilisateur</h2>
+    <p>Bienvenue dans votre espace personnel. Cette section est accessible aux rôles <strong>USER</strong> et <strong>ADMIN</strong>.</p>
+
+    <div style="margin-top: 30px;">
+        <a th:href="@{/home}" class="btn btn-secondary">Retour à l'accueil</a>
+        <a th:href="@{/logout}" class="btn" style="margin-top: 15px;">Se déconnecter</a>
+    </div>
+</div>
+</body>
+</html>
